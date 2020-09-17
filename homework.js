@@ -1,52 +1,72 @@
 // 1. Create a function called "remove" that takes an array and a potential
 // member of the array, and returns a new array with that member removed.
 // For example, `remove(['Cadence', 'Ordel', 'Marion'], 'Marion')` results
-// in `['Cadence', 'Ordel']`.
-     
-     
-
+// in `['Cadence', 'Ordel']`. 
 // If the potential member is not in the array, return the array unchanged.
 // If the potential member is in the array, remove all instances of it from the array.
 
-    function remove (array, item) {
-        let indexOfItem = array.indexOf(item)
-        array.splice(indexOfItem, 1)
-        return array
+function remove (names, person) {
+let filteredArray = []
+    for (let name of names) {
+        if (name !== person) {
+            filteredArray.push (name)
+        }
     }
+    return filteredArray
+}
 
-    
+
 
 // 2. Revisit your "remove" function. Make sure that it does not change the original
 // array but instead returns a new array.
-/*
+// above answer
 // 3. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
-        function sum(array, number) {
-            let sum = 0
-            for (let i = 0; i < array.length; i++) {
-                sum+= array
-            }
-            return sum
-        }
+
+ 
+function sum(scores) {
+    let added = 0
+    for (let score of scores) {
+        added += score
+    }
+    if (scores.length === 1){
+        return scores
+    }
+    return added
+}
+ 
+
 
 // 4. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
-        function average(array, number) {
-            let sum = 0
-            for (let i = 0; i < array.length; i++){
-                sum += array
+
+       function average(array) {
+            if (array.length === 0){
+                return undefined
             }
-            return sum(array)/array.length
-        }
+            if (array.length === 1){
+                return array
+            }
+            return (sum(array) / array.length)
+       }
+      
 // 5. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
-            function minimum(array, number) {
-                let smallestNumber = array.reduce(minimum (current, digit) {
-                    if (digit < current){
-                        return digit
-                    }
-                }
+        function minimum(array, score) {
+            let filteredArray = []
+            if (array.length === 0) {
+                return undefined
             }
+            if (array.length === 1) {
+                return array
+            }
+            for (let min of array){
+                if ( smallestNum < min)
+                filteredArray.push(min)
+                }
+                return filteredArray
+        }
+        
             
 // 6. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
@@ -76,4 +96,4 @@
 // into a string separated by commas.
 //
 // For example, `textList(['Cadence', 'Ordel', 'Marion'])` results in the string
-// `"Cadence,Ordel,Marion"`.
+// `"Cadence,Ordel,Marion"`
